@@ -374,3 +374,445 @@ Your team can design this. What they are and what they call them. There are cust
 - Glue all of this together. 
 - Creating a web if links to get you moving between assets super quick
 - Brings together in a connected unit
+
+#IT Glue Getting Started: Core Assets
+
+## Introduction to Core Assets
+
+### What are core assets?
+
+Core Assets are the physical and non-physical components that make up your client's infrastructure and business. These assets are the building blocks of the Apps & Services you manage for your clients and for yourself. There are six core assets in IT Glue:
+
+| #  | name    			|
+|----|--------------------------|
+| 1  | Configurations           |
+| 2  | Contacts			|
+| 3  | Locations		|
+| 4  | Domain Trackers		|
+| 5  | Passwords		|
+| 6  | SSL Tracker		|
+
+As you will see later, these assets will be related together to build a visual of a particular IT environment. For example, if you provide backup services to your clients, then the core assets provide details about backup appliances, the devices you're backing up, and key documentation to support your team's performance, such as locations, contacts, and passwords.
+
+To ensure compatibility with PSA and RMM sync requirements, ***core assets are not customizable.***
+
+The organization sidebar includes the core assets by default, your Administrator can change the order of items displayed in the sidebar.
+
+## Revision History
+
+When an update is made to a Core Asset, whether by a user or automated sync, it is captured in the **Revision History** section of the asset. A revision is a version of that item as it appeared at that time. Currently, IT Glue keeps indefinite revision histories on all Core Assets.
+
+The date and time stamp along with the name of the user responsible for the edit is shown. If the update is done by an integration or automated process, "Sync" is shown for the name. In the right-side panel of any core asset, you'll see up to five of the most recent updates and the date and time of each change. Users with Creator role and above can click the “View all” button directly below the 5 most recent versions. This opens a **Revisions** screen that lists all previous versions. Below the **Revisions** section, users with Manager or Administrator roles can access the “See full access history” link which opens the activity log for that item.
+
+Click on a timestamp to load the revision you want to view. This allows you to see how a record appeared before a change was made and revert the change if needed. The notification bar at the top of a revision will give you the option to replace the live version with the revision you are currently viewing.
+
+! Details on how revisions are created can be found in our KB article, Tracking revisions to core assets.
+
+## Configurations
+
+Configurations are all your devices, both physical and virtual, that you manage and support for your clients. 
+
+You likely have used Configurations as part of your documentation ecosystem prior to IT Glue, such as in your PSA or as part of other systems. Configurations will be used in IT Glue extensively, but with a specific definition.
+
+**Ok, but what is a configuration?**
+
+IP devices/assets connected to a network, such as physical devices and virtual servers. Configurations can also be pieces of hardware that need to be controlled and managed but that do not have IP addresses, for example, a display, camera, security panel/alarm, or backup power supply.
+
+Many of your configurations will also be included in your RMM tool as endpoints or agents. Your Administrator may be syncing these configurations into IT Glue via a PSA (as indicated by a plug icon) or RMM integration, making it easy to keep IT Glue up to date with all your client's devices.
+
+A list of configurations in IT Glue. This list contains physical and virtual devices for this client, such as Servers, Firewalls, Switches, and Printers.
+
+As with all our core assets, the **fields that are available in the configuration cannot be modified**, this is done to ensure maximum compatibility with 3rd party systems. You will find that almost all of the information you need to capture about a device can be done so here. Details on the roles and functions of those devices will be documented in other areas of IT Glue and linked back to this configuration.
+
+## Contacts
+
+When thinking about Contacts it is helpful to think about more than just the contact information. Storing names, phone numbers, emails, job titles, and locations are naturally important, but with IT Glue you can create relationships between Contacts and other records.
+
+Contacts may already be syncing into IT Glue via your PSA (as indicated by a plug icon), or your administrator may have imported them from a CSV. Once you have your contacts within IT Glue you can start to get the most use out of them.
+
+For instance, consider all the times you have needed to remember a specific connection between a contact and something else. Let’s examine some situations where being able to link a contact could be valuable.
+
+- When documenting **Applications** for your clients you might want to link Application Champions or resources, both internal and client-based, who either know their stuff or who need to be involved when decisions or problems arise.
+
+- **Managing workstations for a client?** Being able to relate the configuration to the person using it can help make sure things don’t get missed or help you get ahold of them when your RMM shows something that needs to be addressed.
+
+- Being able to relate decision-makers to specific process SOPs can speed up the process when you need to get approvals.
+
+These are just a few examples of reasons you might create relationships between contacts and other records. As you grow your own culture of documentation you will find other reasons to use contacts even more.
+
+## Locations
+
+Locations capture physical addresses for your organizations. These are typically the different sites where your clients operate.
+
+If you are syncing with a PSA tool, you may already see this information in IT Glue. As this information is updated in your PSA, it will sync to IT Glue. Optionally, if you have two-way sync enabled, updates to Locations in IT Glue may push to your PSA.
+
+Depending on your PSA setup, you may be storing different addresses as sub-organizations instead of locations. This can be beneficial if each location has a separate infrastructure that needs to be documented separately. Consult your administrator to see how your team is using this feature.
+
+Please review this Knowledge Base article to decide if sub-organizations are right for you: Working with sub-organizations.
+
+## Domain Tracker
+
+The Domain Tracker Core Asset is designed to provide ongoing tracking of internet domains. This includes WHOIS information, expiration dates, and key DNS records (for example, NS, A, MX, TXT, SOA records).
+
+When you add a domain we automatically retrieve and continually update the publicly available DNS and WHOIS information.
+
+At the beginning of every month, all WHOIS information is refreshed for all domains. For the rest of the month, the expiration date of the domain will determine how often it is updated:
+
+- WHOIS updates for domains that expire in the next 90 days are only fetched once a week.
+
+- WHOIS updates for domains that expire in the next 30 days are fetched every other day.
+
+***You can always manually refresh the DNS and WHOIS information by clicking on the Refresh DNS and WHOIS button.***
+
+If you add a domain that has an SSL certificate, the system will ***automatically*** create an SSL Tracker record for that domain and fetch all public aspects of the certificate. The SSL certificate links to the domain as a **Related Item**.
+
+## SSL Tracker
+
+In IT Glue, you can add SSL certificates to IT Glue for centralized storage and track expirations for your client's externally facing services and websites that are secured with SSL.
+
+SSL certificates are captured in a similar manner to domains. Simply enter the URL. The public aspects of the certificate are parsed automatically from the certificate itself, including the Common Name, Expiration, Signature Algorithm, and Issuer.    
+
+The following video explains the domain and SSL trackers (2:07): 
+
+### Good to Know:
+
+- Valid From and Valid Until dates can be manually entered for SSL certificates that are created with a PEM-encoded certificate.
+
+- Expiry dates are added to the expirations report available on each organization's home page.
+
+## Password Basics
+
+Passwords are one of the most important parts of your documentation and with IT Glue you can do so much more than just record credentials. With the Passwords Core Asset, you can make sure that passwords are where you need them when you need them. In addition, you can generate passwords, set permissions, and track revisions for those irritating moments when you ask yourself, “What was my password again?”.
+
+Before we examine some types of credentials you might want to store, it is important to know that there are two types of password records in IT Glue: general and embedded. For the purposes of this module, we will focus on general passwords as they are fully independent records and can be related to multiple items. Please review the Knowledge Base article, Choosing between general and embedded passwords, for more information about the differences between them and how to choose.
+
+Some examples of passwords and credentials that you might need to document are:
+
+- Domain Admin (Active Directory)
+
+- Vendor Credentials (Office365, Datto Dashboard, etc)
+
+- Local Admin Passwords for Configurations
+
+- Service Account Credentials (Utilities, ISP Accounts, etc)
+
+- Physical Access Codes (Alarm, Door Codes, Combination Locks, etc)
+
+This is by no means an exhaustive list but gives you an idea of the kinds of passwords you may want to store.
+
+### Let’s dive into a few of these with some examples of how to use passwords effectively.
+
+- You entered a Domain Admin password. You might use the Related Items feature to relate it to the domain in the Domain Tracker so that you have it at your fingertips when looking at the domain information.
+
+- You have credentials stored for Office365 so that you can manage licenses etc. You use Related Items to relate it to the Application Record in each of your clients who use Office365. You also might relate it to any SOPs that reference troubleshooting Office. This way you have access to the password anywhere you might need it without having to search.
+
+- You create a Local Admin password for your managed workstations. You use the Generate Password feature to create a very secure long password. You then use Related Items to link the password record with the SOPs you have about new workstation setup so that you don’t have to search for the password when you are following that process.
+
+- You manage the internet accounts with your client’s ISP. You create a record for the online login information for their ISP. Then you tag that record from the Internet/WAN flexible asset as well as to the Vendors flexible asset. Now you’ll always be a click away from those credentials.
+
+Now that you have seen some examples, think about ways that you can effectively use passwords in your team!
+
+## Core Assets (Quiz)
+
+Q: Pick the statement that best defines a Configuration in IT Glue.
+A: IP devices/assets connected to a network, such as physical devices and virtual servers. Configurations can also be pieces of hardware that need to be controlled and managed but that do not have IP addresses, for example, a display, camera, security panel/alarm, or backup power supply.
+
+Q: If you add a domain that has an SSL certificate, IT Glue automatically creates an SSL Tracker record for that domain and fetches all the public aspects of the certificate.
+A: True
+
+Q: One of these statements is NOT accurate, which one is it?
+A: General passwords contain information about a client's environment, whereas embedded passwords are reserved for network hardware such as switches and firewalls.
+
+Q: The following are examples of Core Assets (select all that apply)
+A: Passwords, Configurations
+
+Q: How often is the WHOIS information for domains in the Domain Tracker updated?
+A: At the beginning of the month and then the expiration date dictates additional update frequencies throughout the month
+
+Q: True or False: Indefinite revisions are kept for core assets (Configurations, Contacts, Locations, Passwords, Domain Tracker, SSL Tracker).
+A: True
+
+# Getting Started: Apps & Services
+
+## Introduction to Apps & Services
+
+We recommend every account has a menu group for Apps & Services. If you don't see one in your account already, ensure one of your administrators sets it up for you by customizing the sidebar. This area of the sidebar is ***designed to host Flexible Assets***, which are different from the Core Assets described earlier. These Flexible Assets can be completely customized by your Administrator.
+
+Generally, Flexible Assets are used to document the Apps & Services you manage for your clients. For example:
+
+- Applications Flexible Asset - Each of a client's software applications
+
+- LAN Flexible Asset - Data networks
+
+- Backup Flexible Asset - Backup strategy, elements, and instructions
+
+These Apps & Services will capture the logical information about how the core assets (items such as servers, passwords, switches, people) work together to provide a service that you manage for your clients. For example, the LAN Flexible Asset will reference (tag):
+
+- The **location** where the LAN is located
+
+- The **configuration** that is the firewall for this LAN
+
+- The **configurations** that are switches
+
+- The **configurations** that are important servers/workstations utilizing this LAN
+
+- The **configuration** that is acting as the DHCP server
+
+### Entering Data into Flexible Assets
+
+Users with the Creator role or above can create new records in a Flexible Asset type. Each Flexible Asset contains different form fields for entering data, your administrator may have customized these fields so they may look different than the examples provided here.
+
+### Try it!
+
+In your own IT Glue account, create a new Flexible Asset for an organization and Flexible Asset type of your choice.
+
+1. Navigate to an organization. From the organization sidebar, select a Flexible Asset. We will use the **File Sharing** template as an example.   
+2. Click the **New** button at the top-right corner to create a new asset.
+3. Complete the form to enter information on this File Share. This specific asset contains fields that require free-form text entry and tagging fields.
+4. Fields that contain the help text **"Start typing to search for [Asset Type]"** are tagging fields. This field works by searching for assets across your account that match the Asset Type specified. In this example, the "Servers" is searching for Configurations.
+5. When you have completed the data entry, click **Save**.
+
+### Completed File Sharing Asset
+
+**Things to Remember...**
+
+- Flexible Assets can have different kinds of data fields.
+
+- "Tag" fields need to reference data that already exists elsewhere on the platform.
+
+- Flexible Asset fields can be customized by your administrator or manager.
+
+- Flexible Asset fields can include data formats such as select, number, checkbox, date, or textbox (rich text).
+
+- Administrators in IT Glue can modify existing asset designs and add new fields.
+
+- Read more in the article Flexible asset field definitions.
+
+## Apps & Services in the Managed Services World
+
+### What is an App and what is a Service?
+
+An IT environment is made up of various physical assets including computers, servers, printers, switches, and routers. These devices work together to provide a foundation for increasing productivity and automating processes in order to complete work for the end-user. These systems accomplish this by providing applications or services to the end-user. Generally, these Applications and Services will encompass multiple devices which are secured by multiple passwords, connected by various networks and have multiple software solutions running.
+
+To make managing an IT environment easier, you will want to document these Applications and Services, including how they are set up, how to administer them, and what to do if something goes wrong. If you are an MSP, you will provide this as a service to your clients, making it crucial that you have this information at your fingertips should your clients need assistance.
+
+Some examples of Apps & Services in an IT environment are:
+
+- Local Area Network (LAN)
+
+- Computer Software and Applications
+
+- Wireless Access
+
+- Backup and Disaster Recovery
+
+- Email Services
+
+- File Sharing
+
+- Printing Services
+
+#### Current Documentation
+
+Before IT Glue, you may have stored information about the Apps & Services of an IT environment in a variety of places.
+
+- **Configurations**: Configurations by ITIL definition are very broad, a configuration is any component that needs to be managed in order to deliver an IT Service. In other solutions, you would need to document the above apps in services by creating custom questions and user-defined fields to capture everything about a device and the services it's a part of. This system isn't ideal as it puts the focus on the devices and not the Apps & Services, it also forfeits the ability to create relationships.
+
+- **Word processing documents/Wiki**: These free-form documents leave room for extravagant details, however, rarely have the structure needed to easily find information in the future and do not have a way to link pieces of information together.
+
+### IT Glue has a specific definition of Configurations.
+
+***In IT Glue a configuration is defined as:***
+
+*IP devices/assets connected to a network, such as physical devices and virtual servers. Configurations can also be pieces of hardware that need to be controlled and managed but that do not have IP addresses. For example, a display, camera, security panel/alarm, or backup power supply.*
+
+This means that if you are currently storing App & Service information in a configuration as part of another system, you will benefit from moving this information from configurations to their appropriate places in IT Glue.
+
+Once completed, these assets are likely to be the first place to start looking when performing any work in a specific area. They can be seen as perfect "jumping off points" that lead to the component pieces of any area of documentation. Whether you are installing, upgrading, troubleshooting, looking for an overview, or monitoring, the idea is that you start at the Apps and Services asset and will be able to move to any other asset or document you require with one click or tap.
+
+### Things to Remember:
+
+- Apps & Services capture the logical information about how physical assets work together to do work for an end-user.
+
+- Apps & Service information should not be stored in a configuration, but rather in their appropriate templates in IT Glue.
+
+## Apps & Services = Flexible Assets
+
+### Apps & Services vs. Flexible Assets
+
+Flexible Assets are the tools you use to document applications and services. You will see the terms Flexible Asset and Apps & Services used almost interchangeably. This is a helpful principle to remember when designing and storing information in IT Glue. Flexible Assets allow you to document complex things and reference any Core Assets or pieces all in one place.
+
+Because applications and services may vary in your business, Flexible Assets are fully customizable. We will explore customizing flexible assets in an upcoming lesson.
+
+### Importing the pre-built Flexible Asset Templates
+
+IT Glue includes a number of pre-built flexible asset templates that you can import to your account. These templates give you a good starting point for documentation and can be modified to more closely fit your needs and workflows. Please see our Quick guide for flexible assets Knowledge Base article to access and import these templates into your account.
+
+Once these templates are imported, your Managers and Admins will have the opportunity to edit these templates to make them your own. We encourage you to customize these flexible asset templates and their field names and data types.
+
+Each of our templates has an accompanying knowledge base article in our Documentation Guide which explains how each Flexible Asset can be used to document your clients' infrastructure.
+
+### Good to Know:
+
+- Flexible assets are what you use to document applications and services.
+
+- We provide a set of templates to assist you with your documentation.
+
+- Flexible assets can be customized to suit your needs. We will explore this in a future lesson.
+
+## Case Study: Using Flexible Asset Templates
+The pre-built Flexible Asset templates that are available to import provide a great place to start documenting your Apps & Services. In this lesson, we will explore two cases where you can use the pre-built templates in your documentation.
+
+IT Glue has several pre-built Flexible Asset templates that can be imported during account setup. These templates can be very useful for documenting various Apps & Services that you manage for your clients.
+
+Let’s take a look at two examples using pre-built templates to document and use information about your clients.
+
+### Applications Flexible Asset
+
+1. Robert is a technician who needs to document their client, Happy Frog. Specifically, they need to document a new application that the company uses to streamline their catering process. This app is called Fly Feeder. 
+
+2. Robert fills out the existing fields like Name, Category, etc.
+
+3. Robert then moves on to the tag fields. He tags the contacts Jackie, John, and Kevin who need to be informed of any issues with Fly Feeder. 
+
+4. Next, Robert tags the server that is hosting the application. (HF-SF-VAPP01).
+
+5. Also, Robert has already documented the organization Amphibian Feeders LTD. as a Vendor in the Vendors flexible Asset. They tag that vendor in the correct field.
+
+6. Robert clicks the save button and considers what other assets this is related to. They decide to relate two already existing pieces of documentation about Fly Feeder. They click on Add Related Item and relate both the document, "SOP - Setting Up Fly Feeder", and the password, "Fly Feeder Admin".
+
+7. Now Robert has a fully documented application and the whole team is ready to handle requests for the Fly Feeder application, as everything is within just a few clicks.
+
+### Use cases for the LAN Flexible Asset
+
+- Number 1, Figure A: You want to check the network diagram and find your primary firewall to update network rules. (e.g. HF-SF-FW01)
+
+- Number 2, Figure A: To check the configurations that are serving as your DNS and DHCP Servers in case of any name resolution or IP conflicts. (e.g. HF-SF-AD01)
+
+- Number 3, Figure A: To get in touch with LAN administrators for any expert advice. Use related items in the right to link and access. (e.g. Jackie Tilds, Robert Storts)
+
+- Number 4, Figure A: To access any LAN/WAN troubleshooting guides for relevant issues. Use related items in the right-hand area of an asset to link and access documentation. (e.g. Troubleshooting LAN/WAN Connectivity)
+
+- Number 5, Figure A: To get in touch with the Primary ISP for any external network issues. Use related items in the right to link and access. (e.g. AT&T - SF HQ Ethernet)
+
+- Number 6, Figure A: To check out Network Diagrams for different offices. Use related items in the right to link and access. (e.g. Detroit - Billing)
+
+**Note**: This makes alot more sense if the associated image is present. 
+
+## Modifying Flexible Asset Templates
+
+### Modifying Flexible Asset Templates
+
+The templates available to import cover several aspects of documenting your clients' apps and services but they can always be modified to be based on your own specific documentation needs. Adding fields, removing fields, and even renaming fields are all possibilities to make the Flexible Asset templates suit your business perfectly. While Managers and Administrators are the only users who can make these changes it is important that all users understand what is available.
+
+Let's explore some specific examples of modifying a Flexible Asset template to fit your business.
+
+### Static IPs
+
+You are working with the Internet/WAN Flexible Asset. You decide that you want to track the static IP(s) that have been assigned by the ISP. In this case, you could add an extra textbox field to the template. The textbox field is great for this information as it allows for multiple lines of text.
+
+### Embedding Media
+
+External web content that generates an embed code can also be used in the platform. A text box field can be utilized in a Flexible Asset to accomplish this. This field type allows you to access extended tools and our HTML edit mode. As an example, you might want to embed a remote spreadsheet to track switch port mappings to the LAN Flexible Asset. You can also use the text box to embed a Lucidchart diagram of the LAN.
+
+## Tagging Core or Flexible Assets
+
+### Tagging Core or Flexible Assets
+
+Tagging can be used to create relationships between Flexible Asset and any other record in your IT Glue. This means you can tag from a Flexible Asset to cores assets or even another Flexible Asset! An example of this is creating a configuration type tag field for a custom Flexible Asset.
+
+### Good to Know:
+
+- You can modify Flexible Asset to meet your companies needs.
+
+- Relationships between assets can be created by using "Tag" fields.
+
+- You can standardize your documentation further by using select fields to restrict entries to only options you specify.
+
+## The Flexible Asset Designer
+
+The Flexible Asset designer is the tool that Managers and Administrators will use to modify and create Flexible Assets.
+
+First, you should understand how to access the Flexible Asset designer. If you were involved in the setup of your account you might already be familiar with this. If not, you can access it by navigating to **Account > Flexible Asset** Types. Once there you will see all of the Flexible Assets that currently exist in your account. From this list you can select the Flexible Asset you would like to modify, or you can create a new one.
+
+**Note: Before we move on, it is important to know that any changes you make to the structure of Flexible Assets, or any Flexible Assets that you create, are global. This means that the changes you make will be present across all organizations in your account.**
+
+### Once you have selected the specific Flexible Asset you would like to work with you will see the Flexible Asset designer.Once you have selected the specific Flexible Asset you would like to work with you will see the Flexible Asset designer.
+
+#### Let's give you a top-down list of what you will see:
+
+- **Name** - Update the name of the Flexible Asset.
+
+- **Icon** - Select an icon to represent the Flexible Asset in your sidebar.
+
+- **Description** - Add a brief one-sentence description for this Flexible Asset.
+
+- **Enabled** - Allows Flexible Asset to be shown in the sidebar and in Global.
+
+- **Fields** - Modify the specific fields of the Flexible Asset:
+
+	- **Field Fact 1**: These fields can be dragged up and down to change the order that they are displayed in.
+
+	- **Field Fact 2**: All fields will have a name but may be different kinds. For more information about the different kinds of fields available, see the next lesson, “Flexible Asset Field Types”.
+
+
+- **Field Options** - Each field has configurable behaviors for how they display and require information.
+
+#### Let's examine these Field Options:
+
+- **Kind** - For more information about the different kinds of fields available, see the next lesson, “Flexible Asset Field Types”.
+
+- **Required** - Enforce the completion of a field before allowing the saving of a record.
+
+- **Show in list** - This option can be enabled so that you can sort Flexible Asset records by this field in a list view. The list view can be found when there is more than one record within a Flexible Asset or in Global > Assets.
+
+- **Use for title** - Use this checkbox to combine field data for a title. This title will then be searchable on the platform. 
+
+	For example, a check box for "Use for title" on the following fields will create the "Email" asset name "Office 365 Cloud":
+
+		- Name Field using a textbox with the answer "Office 365"
+		- Select Field with the answer "Cloud"
+
+- **Expiration** - Enable this option to report the date at Global > Expirations. You can use expiry dates to create notifications for Flexible Assets. Access to triggers and notifications is dependant on the IT Glue plan you are subscribed to.
+
+- **Remove** - This allows you to remove fields. Be aware that removing a field will remove any data in that field in all organizations.
+
+- **+ New Field** - This button is how you will add fields to your Flexible Asset.
+
+### Good to Know: 
+
+- Users with the role of Manager or Administrator can make modifications and create new Flexible Asset templates.
+
+- You can make certain fields required to ensure an asset of that type cannot be saved without information entered in that field.
+
+## Flexible Asset Field Definitions
+
+Flexible Assets have several types of fields to hold information. General information regarding these fields is available in our Flexible asset field definitions Knowledge Base article. Let's take this opportunity to highlight a few fields that help make your documentation standardized and effective.
+
+### Tag Field
+
+As covered in the previous lesson, and noted in the  KB article above, the **Tag** field kind is one of the most important field types on the platform. With this field, you can create a relationship between existing records in your account. This is one of the features you can use to demonstrate the relationships between core assets and flexible assets, or flexible assets and other flexible assets.
+
+The LAN flexible asset has multiple tag fields, including this one for tagging the configuration.
+
+### Select Field
+
+This field is your very own customizable drop-down list. The **Select** field is ideal for answers that are similar across all your clients. You can modify the choices for these drop-down lists to achieve faster data entry times for your team.
+
+### Checkboxes
+
+**Checkboxes** are incredibly quick to complete and can offer very helpful summaries in the list view. They also offer instant visual feedback on missing or incomplete information as soon as someone opens an asset. Imagine you have a standard operating procedure to run a security check on every application that is installed on servers. Include a checkbox in the **Application** Flexible Asset type to show that this work has been complete. This will prompt anyone working on an application to run through that checklist and you can simply audit them on the list view.
+
+### Tag, Select, and Checkbox
+
+The **Tag, Select**, and **Checkbox** field kinds bring structure to documenting various applications and services. Use these kinds of fields to bring standardization to documentation in IT Glue. Administrators and Managers can set the select field options, or the option for the Tag field, and therefore control the options available for users to document various information.
+
+### Text and Textbox
+
+The **Text** and **Textbox** fields are used for free-form texts. As with any database system, it is a good idea to use these fields sparingly. Use of a **Notes** field or **Misc** field can lead to a lack of standardization of information and make searches and list views less powerful. If you notice some patterns in the data entered into text fields, perhaps this is the time to design some great **Select** fields, **Checkboxes**, and **Tags**.
+
+### Things to Remember:
+
+- Opting to include **Checkboxes, Tag**, and **Select** fields in your flexible asset design can greatly increase the standardization of documentation of your clients.
+
+- Avoid using Textboxes as **Notes** fields as these can quickly become areas where unstructured information collects.
