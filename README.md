@@ -293,12 +293,14 @@ The sidebar can be customized by a Manager or an Administrator. Try to design th
 
 In the meantime, here is how some account administrators will group assets:
 
-| ----------- | ----------- |
-| Group Heading | Description |
-| Core Assets | Your most frequent accessed assets: configurations, contacts, documents, domains, SLL, locations, and passwords |
-| Apps & Services | Contains flexible assets (e.g Applications, LAN, File Sharing), which provide comprehensive information about your managed services, in a structured format. |
-| Administration | Non-technical information such as sales/finance, licensing, and operation information |
-| ----------- | ----------- |
+
+| Group Heading   | Description                                                                                                                                                 |
+|---------------  |-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Core Assets     | Your most frequent accessed assets: configurations, contacts, documents, domains, SLL, locations, and passwords                                             |
+| Apps & Services | Contains flexible assets (e.g Applications, LAN, File Sharing), which provide comprehensive information about your managed services, in a structured format.|
+| Administration  | Non-technical information such as sales/finance, licensing, and operation information                                                                       |
+
+
 
 #### Where to change the sidebar?
 
