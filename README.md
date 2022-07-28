@@ -80,11 +80,8 @@ You might also want to know that staff at IT Glue cannot access your data or acc
 For more information on our security practices, please visit our online resources including:
 
 	- Privacy Policy - https://www.itglue.com/privacy-policy/
-
 	- Terms of Service - https://www.itglue.com/terms/
-
 	- IT Glue Security Whitepaper - https://www.itglue.com/resource/itglue-security/
-
 	- For more details about password security and encryption read our Knowledge Base article about password security and encryption.
 
 
@@ -93,7 +90,7 @@ For more information on our security practices, please visit our online resource
 IT Glue offers some functionality that is dependent on your time zone. You will want to make sure that it reflects the place you are in or your preferred time zone.
 
 We follow the internationally recognized ISO Date and Time format (ISO 8601) to standardize the date and time representation on the platform. ISO Date and Time format is the best representation as it is accurate and universally understandable. ISO 8601 sets out an internationally agreed way to represent dates and times below:
-
+	
 	- May 12, 2022 is represented as 2022-05-12
 	- 9:15am is represented as 09:15:00
 
@@ -330,3 +327,50 @@ Only an Administrator can make this change, more details can be found in our KB 
 
 ## Navigating IT Glue (Quiz)
 
+Q: True or False: You can customize the sidebar for a **particular** organization.
+A: False
+
+Q: Pick the statement that best defines an Organization within IT Glue:
+A: Organizations are companies, businesses, and other entities you do business with.
+
+Q: Which screen would you visit to view a list of **ALL** passwords for **ALL** organizations you have access to?
+A: Global > Assets > Password
+
+Q: Based on this **Global > Completion** image, which organization(s) do not have any Configurations stored (select all that apply)
+A: Bridgeworks, Cisco Meraki
+
+## Key Concepts
+
+There are four key concepts of IT Glue. It is important to understand these as you work with your documentation ecosystem. In this lesson, we will review these concepts of IT Glue. (Video)
+
+### Core Assets
+This is where you will begin. Import and integrations. 6 core types of assets:
+	1. Configurations: IP Addresses and Network Connected. 
+	2. Locations: 
+	3. Contacts
+	4. Domain Tracker: Captured and querired over time
+	5. SSL Tracker: Captured and querired over time
+	6. Passwords: Secure, Audited, Versioned, and foudn in the place you need them. 
+
+**This design is set and can not be changed**
+
+### Flexible Assets (Apps & Services)
+
+Your team can design this. What they are and what they call them. There are customized fields for this asset type. Infrastructure, services, applications. Templates are included. Standardization is like super important. You choose what assets sit here in what order.
+	**Examples**: 
+	- Active Directory
+	- Email
+	- Applications
+	- Backup
+	- LAN
+	- Internet/WAN
+
+### Procedural documents
+- Knows as "Documents". 
+- Reference and Procedural documents
+- IT GLue has its own editor
+
+### Related items
+- Glue all of this together. 
+- Creating a web if links to get you moving between assets super quick
+- Brings together in a connected unit
