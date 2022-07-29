@@ -1,5 +1,3 @@
-[Test Prep]()
-
 # IT-Glue-Technician
 
 # IT Glue Getting Started: Introduction
@@ -818,3 +816,5 @@ The **Text** and **Textbox** fields are used for free-form texts. As with any da
 - Opting to include **Checkboxes, Tag**, and **Select** fields in your flexible asset design can greatly increase the standardization of documentation of your clients.
 
 - Avoid using Textboxes as **Notes** fields as these can quickly become areas where unstructured information collects.
+
+[Test Prep](questions.md)
